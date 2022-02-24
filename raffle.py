@@ -18,7 +18,7 @@ while input_loop:
             names.append(name)
     except:
         print ("Please enter a valid name")
-'''Get random number between 0 and one less than the length of the list'''
+'''Get random number between 0 and one less than the length of the list, used to determine random winner'''
 winner = random.randint(0, len(names) - 1)
 '''Print winner'''
 print(f"All names have now been entered...\nThe winner of the{prize} worth ${prize_cost} is...{names[winner]}!")
