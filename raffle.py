@@ -2,7 +2,8 @@
 import random
 '''Declare list'''
 names = []
-print("Welcome to the best raffle you've ever seen, literally.\nPlease enter the name of each contestant once for each time they wish to put their name in")
+prize = input("Welcome to the best raffle you've ever seen, literally.\nPlease enter the prize to be won: ")
+prize_cost = input("How valuable is the prize?(in $'s, do not add the $ symbol): ")
 '''Run loop to append viable input names and remove empty answers'''
 print ("Please enter the names of people entering the raffle:")
 input_loop = True
@@ -17,6 +18,9 @@ while input_loop:
             names.append(name)
     except:
         print ("Please enter a valid name")
-
+'''Get random number between 0 and one less than the length of the list'''
+winner = random.randint(0, len(names) - 1)
+'''Print winner'''
+print(f"All names have now been entered...\nThe winner of the{prize} worth ${prize_cost} is...{names[winner]}!")
 
 
