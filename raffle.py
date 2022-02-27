@@ -17,6 +17,7 @@ while prize_cost_loop:
         prize_cost = input("How valuable is the prize?(in $'s, do not add the $ symbol): ")
         if len(prize_cost) == 0:
             print("Please enter the value of the prize to be won: ")   
+            prize_cost_loop = False
     except:
         print("Please enter a valid integer prize value (in $'s, do not add the $ symbol)")
 '''Run loop to append viable input names and remove empty answers'''
