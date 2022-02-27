@@ -24,11 +24,11 @@ while prize_cost_loop:
 '''Run loop to append viable input names and remove empty answers'''
 print ("Please enter the names of people entering the raffle:")
 name_input_loop = True
-while input_loop:
+while name_input_loop:
     try:
         name = input()
         if name == "end":
-            input_loop = False
+            name_input_loop = False
         elif len(name) == 0:
             print ("Input empty, please enter the names of people entering the raffle:")
         else:
