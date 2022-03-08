@@ -16,13 +16,26 @@ while run:
     '''Fetch car name, seat number and availablility'''
     for car in cars_rental_list:
         if car[2] == False:
-            print(f"{car[0], car[1]}, Unavailable")
+            print(car[0], car[1],", Unavailable")
         else:
             print(car[0], car[1])    
     '''Get rental input'''
-    i = int(input("Which car would you like to book? "))
+    rental_input = True
+    while rental_input:
+        i = int(input("Which car would you like to book? "))
+        if cars_rental_list[i-1][2] == False:
+            print(f"The {cars_rental_list[i-1][0]} is currently booked.")
+        elif i < 1 or i > 8:
+            print("Not a valid input, please enter an integer between 1 and 8.")
+        else:
+            rental_input = False
     '''Assign unavailable status'''
     cars_rental_list[i-1][2] = False
+    print(f"You have booked the {cars_rental_list[i-1][0]}.")
+    name = input("What is your name? ")
+    cars_rental_list[i-1].append(name)
+    print(f"Thanks, {name}.")
+    
 
             
         
