@@ -3,15 +3,15 @@ bypass_loop = True
 end_code = False
 booked_cars = 0
 '''Define lists'''
-cars_rental_list = [["Suzuki Van", "(2)", True],
-                    ["Toyota Corolla", "(4)", True],
-                    ["Honda CRV", "(4)", True],
-                    ["Suzuki Swift", "(4)", True],
-                    ["Mitsubishi Airtrek", "(4)", True],
-                    ["Nissan DC Ute", "(4)", True],
-                    ["Toyota Previa", "(7)", True],
-                    ["Toyota Hi Ace", "(12)", True],
-                    ["Toyota Hi Ace", "(12)", True]]
+cars_rental_list = [["1.", "Suzuki Van", "(2)", True],
+                    ["2.", "Toyota Corolla", "(4)", True],
+                    ["3.", "Honda CRV", "(4)", True],
+                    ["4.", "Suzuki Swift", "(4)", True],
+                    ["5.", "Mitsubishi Airtrek", "(4)", True],
+                    ["6.", "Nissan DC Ute", "(4)", True],
+                    ["7.", "Toyota Previa", "(7)", True],
+                    ["8.", "Toyota Hi Ace", "(12)", True],
+                    ["9.", "Toyota Hi Ace", "(12)", True]]
 '''Begin run loop'''
 run = True
 while run:
@@ -27,10 +27,10 @@ while run:
     print("Here are a list of available cars: ")
     '''Fetch car name, seat number and availablility'''
     for car in cars_rental_list:
-        if car[2] == False:
-            print(car[0], car[1],", Unavailable")
+        if car[3] == False:
+            print(car[0], car[1], car[2],", Unavailable")
         else:
-            print(car[0], car[1])    
+            print(car[0], car[1], car[2])    
     '''Get rental input'''
     rental_input = True
     while rental_input:
@@ -49,16 +49,16 @@ while run:
                     run = False                    
                     print("No cars have been booked today. ")
                     end_code = True
-            elif cars_rental_list[i-1][2] == False:
+            elif cars_rental_list[i-1][3] == False:
                 print(f"The {cars_rental_list[i-1][0]} is currently booked.")     
-            elif cars_rental_list[i-1][2] == True:
+            elif cars_rental_list[i-1][3] == True:
                 rental_input = False
         except ValueError:
             print("That is not a valid integer between 0 - 9")
     '''Assign availability status'''
     while bypass_loop:
-        cars_rental_list[i-1][2] = False
-        print(f"You have booked the {cars_rental_list[i-1][0]}.")
+        cars_rental_list[i-1][3] = False
+        print(f"You have booked the {cars_rental_list[i-1][1]}.")
         booked_cars += 1
         name_loop = True
         while name_loop:
@@ -74,8 +74,8 @@ while run:
 if end_code == False:
     print("Daily summary: ")
     for car in cars_rental_list:
-        if car[2] == False:
-            print (car[0], car[3])
+        if car[3] == False:
+            print (f"{car[1]} - {car[4]}")
 
         
             
