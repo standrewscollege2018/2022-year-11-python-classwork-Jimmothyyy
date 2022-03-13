@@ -50,7 +50,7 @@ while run:
                     print("No cars have been booked today. ")
                     end_code = True
             elif cars_rental_list[i-1][3] == False:
-                print(f"The {cars_rental_list[i-1][0]} is currently booked.")     
+                print(f"The {cars_rental_list[i-1][1]} is currently booked.")     
             elif cars_rental_list[i-1][3] == True:
                 rental_input = False
         except ValueError:
